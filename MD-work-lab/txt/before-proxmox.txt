@@ -1,0 +1,25 @@
+1. add line
+  # nano /etc/apt/sources.list
+
+  =======================================================================
+    deb http://ftp.pl.debian.org/debian bullseye main contrib
+
+    deb http://ftp.pl.debian.org/debian bullseye-updates main contrib
+
+    # security updates
+    deb http://security.debian.org bullseye-security main contrib
+
+    # not for production use
+    deb https://download.proxmox.com/debian buster pve-no-subscription
+  =======================================================================
+
+2. comment line
+  # nano /etc/apt/sources.list.d/pve-enterprise.list
+
+  =======================================================================               
+    #deb https://enterprise.proxmox.com/debian/pve bullseye pve-enterprise
+  =======================================================================               
+
+3. Update & upgrade from gui console
+
+4. Have to learn about vlan aware

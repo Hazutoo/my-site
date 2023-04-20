@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header style: */
+
+header {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.language-container {
+  display: flex;
+  align-items: center;
+}
+
+.language-container a {
+  margin-left: 10px;
+}
+
+/* Navigation style: */
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+nav li {
+  float: left;
+  width: 15vh;
+}
+
+nav li a,
+.dropbtn {
+  display: inline-block;
+  color: #090909;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 15vh;
+}
+
+nav li a:hover,
+.dropdown:hover .dropbtn {
+  background: #f1f1f1;
+}
+
+nav li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 15vh;
+}
+
+.dropdown-content a {
+  color: 090909;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main div style: */
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  text-align: center;
+  font-size: 40px;
+  margin: 10vh;
+}
+
+article h1{
+  padding: 1vh;
+}
+
+article p {
+  padding: 1vh;
+}
+
+/* Footer style: */
+
+footer {
+  text-align: center;
+  background-color: #f9f9f9;
+  }
+  
+  footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  margin: 0 40px 0 40px;
+  }
+  
+  footer .social-links {
+  display: flex;
+  align-items: center;
+  }
+  
+footer .social-links p {
+    margin-right: 20px;
+    margin-left: 20px ;
+  }
+
+  footer .social-links a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: 10px;
+  }
+  
+  footer .social-links a:hover {
+  color: #007bff;
+  }
+  
+  footer .made-by {
+  color: #191919;
+  margin: 0;
+  padding-top: 5px;
+  }
+
+  @media (max-width: 767px) {
+    footer .wrapper {
+      flex-direction: column;
+    }
+    footer .social-links {
+      margin-bottom: 10px;
+    }
+  }
+  

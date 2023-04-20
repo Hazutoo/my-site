@@ -1,0 +1,3 @@
+https://github.com/ddclient/ddclient
+
+DDNS stands for Dynamic Domain Name System. It is a service that allows users to assign a fixed domain name to a dynamic IP address, which can change frequently. This is useful for remote access to devices or services that are hosted on a network with a changing IP address. DDNS works by automatically updating the DNS records with the current IP address, ensuring that the domain name always points to the correct IP address.

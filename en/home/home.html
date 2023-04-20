@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Jaroslaw Dulewicz - Website</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.ico" />
+    <!-- https://favicon.io/favicon-generator/ -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="about, portfolio, homelab, retro" />
+    <meta name="description" content="Personal web page" />
+    <meta name="author" content="Jarosław Dulewicz" />
+    <!--Setting the viewport to make your website look good on all devices:-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <header>
+      <button id="hamburger" class="hamburger">&#9776;</button>
+      <div class="language-container">
+        <a href="#"><img src="/img/uk.png" width="35" height="21" alt="UK flag"></a>
+      </div>
+  </header>
+  <nav id="menu">
+      <ul>
+          <li><a href="/en/home/home.html">Home</a></li>
+          <li><a href="/en/about-me/about-me.html">About me</a></li>
+          <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">My stuff</a>
+              <div class="dropdown-content">
+                  <a href="/en/my-stuff/daily/daily.html">Daily</a>
+                  <a href="/en/my-stuff/homelab/homelab.html">Homelab</a>
+                  <a href="/en/my-stuff/retro/retro.html">Retro</a>
+              </div>
+          </li>
+          <li><a href="/en/notes/notes.html">Notes</a></li>
+          <li><a href="/en/links/links.html">Links</a></li>
+          <li><a href="/en/contact/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main id="main-home">
+      <article class="jump-in" id="home">
+        <h1 class="homepage-title">Welcome to my Website!</h1>
+        <p class="homepage-description">
+          I appreciate you taking the time to visit. Please feel free to explore the subpages for a more comprehensive understanding of both myself and my work. Thank you for your interest!
+        </p>
+      </article>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="social-links">
+          <p>
+            <a href="https://github.com/Hazutoo">
+              <img src="\img\svg\social_github_icon.svg" alt="social_github_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Github</span>
+            </a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/jaros%C5%82aw-dulewicz-it/?locale=en_US">
+              <img src="\img\svg\linkedin_social_icon.svg" alt="linkedin_social_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Linkedin</span>
+            </a>
+          </p>
+          <p>
+            <a href="https://t.me/hazauto">
+              <img src="\img\svg\paperplane_icon.svg" alt="telegram_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Telegram</span>
+            </a>
+          </p>
+        </div>
+        <p class="made-by">Made by Jaroslaw Dulewicz 2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!-- current year -->
+<script>
+  var currentYear = new Date().getFullYear();
+  document.getElementById("currentYear").innerHTML = currentYear;
+</script>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function(event) {
+    event.stopPropagation();
+    const menu = document.getElementById('menu');
+    if (menu.style.left === '-250px') {
+        menu.style.left = '0px';
+    } else {
+        menu.style.left = '-250px';
+    }
+});
+
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    if (menu.style.left === '0px') {
+        menu.style.left = '-250px';
+    }
+});
+
+document.getElementById('menu').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+</script>
