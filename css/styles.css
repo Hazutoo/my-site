@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
 /* Header style: */
@@ -47,6 +48,11 @@ header {
 
 main {
   flex-grow: 1;
+}
+
+.gradient {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, rgba(231, 240, 240, 0.8), rgba(249, 240, 231, 0.8), rgba(240, 231, 249, 0.8));
 }
 
 #main-home {
