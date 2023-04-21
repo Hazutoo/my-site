@@ -78,11 +78,6 @@ main {
   }
 }
 
-article {
-  font-size: 40px;
-  margin: 50px;
-}
-
 article h1 {
   padding-bottom: 1vh;
 }
@@ -150,14 +145,17 @@ footer .social-links p {
       flex-direction: column;
     }
     footer .social-links {
-      margin-bottom: 10px;
+      margin: 10px;
+      flex-direction: column;
     }
     article {
       margin: 10%;
     }
+    p {
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
   }
-  
-/* TEST */
 
 .hamburger {
   background-color: transparent;
@@ -239,4 +237,31 @@ article h4 {
 article a {
   text-decoration: none;
   color: #008970;
+}
+
+article {
+  margin: 0 25%;
+  font-size: 40px;
+}
+
+@media screen and (min-width: 1920px) {
+  article {
+    width: 80em;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  article {
+    width: 80%; /* Dla mniejszych ekranów */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  article {
+    margin: 0 5%;
+    font-size: 30px;
+  }
+  main {
+    padding: 10% 0;
+  }
 }
