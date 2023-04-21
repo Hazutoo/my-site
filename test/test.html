@@ -14,37 +14,62 @@
   </head>
 
   <body>
+          <!-- current year -->
+    <script>
+      var currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").innerHTML = currentYear;
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.hamburger').addEventListener('click', function(event) {
+              event.stopPropagation();
+              const menu = document.getElementById('menu');
+              if (menu.style.left === '-250px') {
+                  menu.style.left = '0px';
+              } else {
+                  menu.style.left = '-250px';
+              }
+          });
+      
+          document.addEventListener('click', function(event) {
+              const menu = document.getElementById('menu');
+              if (menu.style.left === '0px') {
+                  menu.style.left = '-250px';
+              }
+          });
+      
+          document.getElementById('menu').addEventListener('click', function(event) {
+              event.stopPropagation();
+          });
+      });
+      </script>
     <header>
-      <div class="logo-container">
-        <img src="\img\svg\rainy_icon.svg" alt="rainy_icon" width="40" height="40";">
-        <p>Jaroslaw Dulewicz</p>
-      </div>
+      <button id="hamburger" class="hamburger">&#9776;</button>
       <div class="language-container">
         <a href="#"><img src="/img/uk.png" width="35" height="21" alt="UK flag"></a>
       </div>
-    </header>    
-    
-    <nav>
-      <ul id="menu">
-        <li><a href="/en/home/home.html">Home</a></li>
-        <li><a href="/en/about-me/about-me.html">About me</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">My stuff</a>
-          <div class="dropdown-content">
-            <a href="/en/my-stuff/daily/daily.html">Daily</a>
-            <a href="/en/my-stuff/homelab/homelab.html">Homelab</a>
-            <a href="/en/my-stuff/retro/retro.html">Retro</a>
-          </div>
-        </li>
-        <li><a href="/en/notes/notes.html">Notes</a></li>
-        <li><a href="/en/links/links.html">Links</a></li>
-        <li><a href="/en/contact/contact.html">Contact</a></li>
+  </header>
+  <nav id="menu">
+      <ul>
+          <li><a href="/en/home/home.html">Home</a></li>
+          <li><a href="/en/about-me/about-me.html">About me</a></li>
+          <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">My stuff</a>
+              <div class="dropdown-content">
+                  <a href="/en/my-stuff/daily/daily.html">Daily</a>
+                  <a href="/en/my-stuff/homelab/homelab.html">Homelab</a>
+                  <a href="/en/my-stuff/retro/retro.html">Retro</a>
+              </div>
+          </li>
+          <li><a href="/en/notes/notes.html">Notes</a></li>
+          <li><a href="/en/links/links.html">Links</a></li>
+          <li><a href="/en/contact/contact.html">Contact</a></li>
       </ul>
     </nav>
-    <main>
-      <article>
-        <h1>Welcome to my Website!</h1>
-        <p>
+    <main id="main-home">
+      <article class="jump-in" id="home">
+        <h1 class="homepage-title">Welcome to my Website!</h1>
+        <p class="homepage-description">
           I appreciate you taking the time to visit. Please feel free to explore the subpages for a more comprehensive understanding of both myself and my work. Thank you for your interest!
         </p>
       </article>
@@ -74,11 +99,9 @@
         <p class="made-by">Made by Jaroslaw Dulewicz 2023</p>
       </div>
     </footer>
+
   </body>
 </html>
 
-<!-- current year -->
-<script>
-  var currentYear = new Date().getFullYear();
-  document.getElementById("currentYear").innerHTML = currentYear;
-</script>
+
+  

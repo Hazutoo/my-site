@@ -20,6 +20,7 @@ header {
   align-items: center;
   padding: 10px 30px;
   font-size: 20px;
+  background-color: #f9f9f9;
 }
 
 .logo-container {
@@ -36,85 +37,53 @@ header {
   margin-left: 10px;
 }
 
-/* Navigation style: */
-
-nav ul {
-  display: flex;
-  list-style-type: none;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #f9f9f9;
-}
-
-nav li {
-  float: left;
-  width: 15vh;
-}
-
-nav li a,
-.dropbtn {
-  display: inline-block;
-  color: #090909;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  width: 15vh;
-}
-
-nav li a:hover,
-.dropdown:hover .dropbtn {
-  background: #f1f1f1;
-}
-
-nav li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 15vh;
-}
-
-.dropdown-content a {
-  color: 090909;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* Main div style: */
 
 main {
   flex-grow: 1;
+}
+
+#main-home {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-article {
-  text-align: center;
-  font-size: 40px;
-  margin: 10vh;
+.jump-in h1, .jump-in p {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: jumpIn 1s ease-in-out forwards;
 }
 
-article h1{
+@keyframes jumpIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+article {
+  margin: 10vh 20vh;
+}
+
+article h1 {
+  padding-bottom: 1vh;
+}
+
+#home {
+  text-align: center;
+  font-size: 40px;
+}
+
+#home .homepage-title {
   padding: 1vh;
 }
 
-article p {
+#home .homepage-description {
   padding: 1vh;
 }
 
@@ -154,7 +123,7 @@ footer .social-links p {
   }
   
   footer .social-links a:hover {
-  color: #007bff;
+  color: #008970;
   }
   
   footer .made-by {
@@ -170,5 +139,54 @@ footer .social-links p {
     footer .social-links {
       margin-bottom: 10px;
     }
+    article {
+      margin: 5vh 5vh;
+    }
   }
   
+/* TEST */
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+nav {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  background-color: #1c1c1c;
+  overflow-x: hidden;
+  transition: left 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-align: center;
+  display: block;
+  color: #b8b8b8;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 2.5vh;
+  margin: 0 10%;
+}
+
+nav ul li a:hover {
+  color: #fafafa;
+  background-color: #313131;
+  border-radius: 5px;
+} 

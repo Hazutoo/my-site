@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <title>Jaroslaw Dulewicz - Website</title>
@@ -15,44 +15,48 @@
 
   <body>
     <header>
-      <div class="logo-container">
-        <img src="\img\svg\rainy_icon.svg" alt="rainy_icon" width="40" height="40";">
-        <p>Jaroslaw Dulewicz</p>
-      </div>
+      <button id="hamburger" class="hamburger">&#9776;</button>
       <div class="language-container">
         <a href="#"><img src="/img/uk.png" width="35" height="21" alt="UK flag"></a>
       </div>
-    </header>    
-    
-    <nav>
-      <ul id="menu">
-        <li><a href="/en/home/home.html">Home</a></li>
-        <li><a href="/en/about-me/about-me.html">About me</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">My stuff</a>
-          <div class="dropdown-content">
-            <a href="/en/my-stuff/daily/daily.html">Daily</a>
-            <a href="/en/my-stuff/homelab/homelab.html">Homelab</a>
-            <a href="/en/my-stuff/retro/retro.html">Retro</a>
-          </div>
-        </li>
-        <li><a href="/en/notes/notes.html">Notes</a></li>
-        <li><a href="/en/links/links.html">Links</a></li>
-        <li><a href="/en/contact/contact.html">Contact</a></li>
+  </header>
+  <nav id="menu" style="left: -250px;">
+      <ul>
+          <li><a href="/en/home/home.html">Home</a></li>
+          <li><a href="/en/about-me/about-me.html">About me</a></li>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="menu-link">My stuff</a>
+            <ul class="submenu">
+              <li><a href="/en/my-stuff/daily/daily.html">Daily</a></li>
+              <li><a href="/en/my-stuff/homelab/homelab.html">Homelab</a></li>
+              <li><a href="/en/my-stuff/retro/retro.html">Retro</a></li>
+            </ul>
+          </li>
+          <li><a href="/en/notes/notes.html">Notes</a></li>
+          <li><a href="/en/links/links.html">Links</a></li>
+          <li><a href="/en/contact/contact.html">Contact</a></li>
       </ul>
     </nav>
-    <main>
-      <article>
-        <h1>Who am I?</h1>
-        <p> I'm a 21-year-old computer science student at the University of Lodz.
-          My full time job is an IT specialist. I am passionate about various
-          fields of technology. In the future, I would like to become an IT
-          systems administrator. Learning new things makes me fulfilled. My
-          immediate plans are to create a fully functional homelab and master
-          the devops philosophy. In my spare time I love to play retro or indie
-          games, sing and DIY.</p>
+    <main id="main-home">
+      <article class="jump-in">
+        <h1>🤷‍♀️ Who am I?</h1>
+        <p>
+          Born in 2001, I'm now 22 years old and work full-time as an Junior IT System Administrator. My job involves maintaining a Linux environment, while my hobbies include tinkering, retro things, listening to indie music, and taking care of my beloved hamster.
+        </p>
+          <br>
+        <p>
+          In my free time, I like to work on my homelab, where I explore new technologies and experiment with different setups. Learning about new things is one of my passions, and I find it both challenging and rewarding.
+        </p>
+          <br>
+        <p>
+          My future plans involve furthering my career as a DevOps engineer. Through this website, I aim to document my knowledge and share it with others who share my interests, helping them to develop their skills more quickly.
+        </p>
+          <br>
+        <p>
+          Disclaimer: Please be aware that I create the entire page myself. If you find any errors, please share your feedback with me, and I will try to correct them as quickly as possible. Thank you in advance for your understanding.
+        </p>
       </article>
-    </main>
+      </main>
     <footer>
       <div class="wrapper">
         <div class="social-links">
@@ -78,11 +82,52 @@
         <p class="made-by">Made by Jaroslaw Dulewicz 2023</p>
       </div>
     </footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".hamburger").addEventListener("click", function (event) {
+      event.stopPropagation();
+      const menu = document.getElementById("menu");
+      if (menu.style.left === "-250px") {
+        menu.style.left = "0px";
+      } else {
+        menu.style.left = "-250px";
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("menu");
+      if (menu.style.left === "0px") {
+        menu.style.left = "-250px";
+      }
+    });
+
+    document.getElementById("menu").addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+
+    const menuLinks = document.querySelectorAll(".menu-link");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        const submenu = event.target.nextElementSibling;
+        if (submenu.style.display === "block") {
+          submenu.style.display = "none";
+        } else {
+          submenu.style.display = "block";
+        }
+      });
+    });
+  });
+</script>
+
+     <!-- current year -->
+     <script>
+      var currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").innerHTML = currentYear;
+    </script>
+   
   </body>
 </html>
-
-<!-- current year -->
-<script>
-  var currentYear = new Date().getFullYear();
-  document.getElementById("currentYear").innerHTML = currentYear;
-</script>

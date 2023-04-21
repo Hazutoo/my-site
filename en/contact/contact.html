@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Jaroslaw Dulewicz - website</title>
+    <title>Jaroslaw Dulewicz - Website</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.ico" />
     <!-- https://favicon.io/favicon-generator/ -->
     <link rel="stylesheet" href="/css/styles.css" />
     <meta charset="UTF-8" />
-    <meta name="keywords" content="about, portfolo, homelab, retro" />
+    <meta name="keywords" content="about, portfolio, homelab, retro" />
     <meta name="description" content="Personal web page" />
     <meta name="author" content="Jarosław Dulewicz" />
     <!--Setting the viewport to make your website look good on all devices:-->
@@ -15,46 +15,105 @@
 
   <body>
     <header>
-      <h1>Jaroslaw Dulewicz</h1>
-      <div>
-        <h2>website</h2>
-        <a href="#"><img src="/img/uk.png" width="50wp" height="30wp"</a>
+      <button id="hamburger" class="hamburger">&#9776;</button>
+      <div class="language-container">
+        <a href="#"><img src="/img/uk.png" width="35" height="21" alt="UK flag"></a>
       </div>
-    </header>
-    <nav>
-      <ul id="menu">
-        <li><a href="/en/home/home.html">Home</a></li>
-        <li><a href="/en/about-me/about-me.html">About me</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">My stuff</a>
-          <div class="dropdown-content">
-            <a href="/en/my-stuff/daily/daily.html">Daily</a>
-            <a href="/en/my-stuff/homelab/homelab.html">Homelab</a>
-            <a href="/en/my-stuff/retro/retro.html">Retro</a>
-          </div>
-        </li>
-        <li><a href="/en/notes/notes.html">Notes</a></li>
-        <li><a href="/en/links/links.html">Links</a></li>
-        <li><a href="/en/contact/contact.html">Contact</a></li>
+  </header>
+  <nav id="menu" style="left: -250px;">
+      <ul>
+          <li><a href="/en/home/home.html">Home</a></li>
+          <li><a href="/en/about-me/about-me.html">About me</a></li>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="menu-link">My stuff</a>
+            <ul class="submenu">
+              <li><a href="/en/my-stuff/daily/daily.html">Daily</a></li>
+              <li><a href="/en/my-stuff/homelab/homelab.html">Homelab</a></li>
+              <li><a href="/en/my-stuff/retro/retro.html">Retro</a></li>
+            </ul>
+          </li>
+          <li><a href="/en/notes/notes.html">Notes</a></li>
+          <li><a href="/en/links/links.html">Links</a></li>
+          <li><a href="/en/contact/contact.html">Contact</a></li>
       </ul>
     </nav>
-    <main>
-      <article>
-        <h1>Go to:</h1>
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/jarek.dulewicz.7/">Facebook</a>
-          </li>
-          <li><a href="https://t.me/Hazauto">Telegram</a></li>
-          <li><a href="mailto:jarek@dulewicz.site">Send Email</a>
-          </li>
-          <li><a href="#">Curriculum vitae</a></li>
-        </ul>
+    <main id="main-home">
+      <article class="jump-in">
+        <h1>You can get in touch with me through the social media links provided in the footer of this website. 📧💬👋🌐</h1>
 
-      </article>
-    </main>
+          </article>
+        </main>
     <footer>
-      <p>Made by Jaroslaw Dulewicz 2022</p>
+      <div class="wrapper">
+        <div class="social-links">
+          <p>
+            <a href="https://github.com/Hazutoo">
+              <img src="\img\svg\social_github_icon.svg" alt="social_github_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Github</span>
+            </a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/jaros%C5%82aw-dulewicz-it/?locale=en_US">
+              <img src="\img\svg\linkedin_social_icon.svg" alt="linkedin_social_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Linkedin</span>
+            </a>
+          </p>
+          <p>
+            <a href="https://t.me/hazauto">
+              <img src="\img\svg\paperplane_icon.svg" alt="telegram_icon" width="30" height="30" style="margin-right: 10px;">
+              <span>Telegram</span>
+            </a>
+          </p>
+        </div>
+        <p class="made-by">Made by Jaroslaw Dulewicz 2023</p>
+      </div>
     </footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".hamburger").addEventListener("click", function (event) {
+      event.stopPropagation();
+      const menu = document.getElementById("menu");
+      if (menu.style.left === "-250px") {
+        menu.style.left = "0px";
+      } else {
+        menu.style.left = "-250px";
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      const menu = document.getElementById("menu");
+      if (menu.style.left === "0px") {
+        menu.style.left = "-250px";
+      }
+    });
+
+    document.getElementById("menu").addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+
+    const menuLinks = document.querySelectorAll(".menu-link");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        const submenu = event.target.nextElementSibling;
+        if (submenu.style.display === "block") {
+          submenu.style.display = "none";
+        } else {
+          submenu.style.display = "block";
+        }
+      });
+    });
+  });
+</script>
+
+     <!-- current year -->
+     <script>
+      var currentYear = new Date().getFullYear();
+      document.getElementById("currentYear").innerHTML = currentYear;
+    </script>
+   
   </body>
 </html>
