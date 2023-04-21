@@ -78,23 +78,6 @@ main {
   }
 }
 
-article h1 {
-  padding-bottom: 1vh;
-}
-
-#home {
-  text-align: center;
-  font-size: 40px;
-}
-
-#home .homepage-title {
-  padding: 1vh;
-}
-
-#home .homepage-description {
-  padding: 1vh;
-}
-
 /* Footer style: */
 
 footer {
@@ -226,6 +209,24 @@ nav ul li a:hover {
   list-style: none;
 }
 
+article h1 {
+  font-size: 5.5vh;
+  padding-bottom: 2vh;
+}
+
+#home {
+  text-align: center;
+  font-size: 40px;
+}
+
+#home .homepage-title {
+  padding: 1vh;
+}
+
+#home .homepage-description {
+  padding: 1vh;
+}
+
 article h3 {
   padding-top: 2%;
 }
@@ -240,7 +241,7 @@ article a {
 }
 
 article {
-  margin: 0 25%;
+  margin: 5% 25%;
   font-size: 40px;
 }
 
@@ -264,4 +265,17 @@ article {
   main {
     padding: 10% 0;
   }
+  article h1 {
+    font-size: 2.5vh;
+    padding-bottom: 2vh;
+  }
+}
+
+.my-stuff {
+  text-align: center;
+}
+
+.retro {
+  list-style: none;
+  text-align: center;
 }
